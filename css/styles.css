@@ -1,520 +1,118 @@
-:root {
-  --primary: #0d4d8d;
-  --primary-dark: #0a3e74;
-  --accent: #e7b93d;
-  --accent-soft: #f9f0d1;
-  --text: #1d2430;
-  --muted: #5a6474;
-  --bg: #f6f9fc;
-  --card: #ffffff;
-  --line: #dfe7f0;
-  --shadow: 0 12px 30px rgba(20, 35, 65, 0.12);
-  --radius: 18px;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.7;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-.container {
-  width: min(1120px, calc(100% - 2rem));
-  margin: 0 auto;
-}
-
-.section {
-  padding: 5rem 0;
-}
-
-.section-heading {
-  margin-bottom: 2rem;
-}
-
-.section-heading.center {
-  text-align: center;
-}
-
-.eyebrow {
-  font-size: 0.8rem;
-  letter-spacing: 0.14em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 0.8rem;
-}
-
-.eyebrow.accent {
-  color: var(--primary);
-}
-
-h1, h2, h3, h4, p {
-  margin-top: 0;
-}
-
-h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  line-height: 1.1;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: clamp(2rem, 3vw, 2.8rem);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-p {
-  color: var(--muted);
-}
-
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(13, 77, 141, 0.08);
-}
-
-.nav-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  min-height: 80px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-weight: 800;
-}
-
-.brand strong {
-  display: block;
-  font-size: 1.25rem;
-  color: var(--text);
-}
-
-.brand small {
-  display: block;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-}
-
-.main-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  font-weight: 600;
-}
-
-.main-nav a {
-  color: var(--muted);
-  transition: color 0.2s ease;
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-  color: var(--primary);
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 46px;
-  padding: 0.8rem 1.35rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-weight: 700;
-  transition: 0.2s ease;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff;
-  box-shadow: var(--shadow);
-}
-
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.hero {
-  position: relative;
-  background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-  min-height: 620px;
-  display: flex;
-  align-items: center;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(8, 28, 52, 0.82), rgba(8, 28, 52, 0.58));
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 5rem 0;
-}
-
-.hero-copy {
-  max-width: 620px;
-  color: #fff;
-}
-
-.hero-copy p {
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 1.08rem;
-  max-width: 540px;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.hero-stats {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  padding: 0;
-  margin: 2rem 0 0;
-  flex-wrap: wrap;
-}
-
-.hero-stats li {
-  display: grid;
-  gap: 0.25rem;
-  min-width: 110px;
-  color: #fff;
-}
-
-.hero-stats strong {
-  font-size: 1.1rem;
-}
-
-.hero-stats span {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.two-col,
-.split-section,
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem;
-  align-items: center;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.three-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.two-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.four-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.info-card,
-.program-card,
-.value-box,
-.program-panel,
-.info-panel,
-.contact-card,
-.contact-form {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.info-card,
-.program-card,
-.value-box,
-.program-panel,
-.contact-card,
-.contact-form,
-.info-panel {
-  padding: 1.8rem;
-}
-
-.icon {
-  width: 48px;
-  height: 48px;
-  background: var(--accent-soft);
-  color: var(--primary);
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-
-.alt-bg {
-  background: #edf4fa;
-}
-
-.image-panel img {
-  border-radius: var(--radius);
-  min-height: 420px;
-  object-fit: cover;
-  box-shadow: var(--shadow);
-}
-
-.feature-list {
-  list-style: none;
-  margin: 1.5rem 0 0;
-  padding: 0;
-  display: grid;
-  gap: 0.75rem;
-}
-
-.feature-list li {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  color: var(--text);
-}
-
-.feature-list li::before {
-  content: "✓";
-  color: var(--primary);
-  font-weight: 800;
-}
-
-.cta-band {
-  padding-top: 0;
-}
-
-.cta-box {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  border-radius: 24px;
-  padding: 2rem 2.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  box-shadow: var(--shadow);
-}
-
-.cta-box h2,
-.cta-box p {
-  color: #fff;
-}
-
-.site-footer {
-  background: #0d1728;
-  color: #e7edf5;
-  padding-top: 4rem;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 2rem;
-}
-
-.site-footer h3,
-.site-footer h4 {
-  color: #fff;
-}
-
-.site-footer p,
-.site-footer li,
-.site-footer a {
-  color: rgba(231, 237, 245, 0.8);
-}
-
-.site-footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 0.5rem;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 2rem;
-  padding: 1rem 0 2rem;
-}
-
-.page-hero {
-  position: relative;
-  background: url("https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
-  min-height: 360px;
-  display: flex;
-  align-items: center;
-}
-
-.small-hero .container {
-  position: relative;
-  z-index: 1;
-  padding: 3rem 0 2rem;
-  color: #fff;
-}
-
-.small-hero .eyebrow {
-  color: var(--accent);
-}
-
-.text-block {
-  max-width: 900px;
-}
-
-.info-panel {
-  background: linear-gradient(180deg, var(--card), #f0f7ff);
-}
-
-.contact-list {
-  list-style: none;
-  padding: 0;
-  margin: 1.25rem 0 0;
-  display: grid;
-  gap: 0.8rem;
-  color: var(--text);
-}
-
-.field-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-label {
-  display: grid;
-  gap: 0.5rem;
-  font-weight: 600;
-  color: var(--text);
-  margin-bottom: 1rem;
-}
-
-input,
-textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 0.9rem 1rem;
-  font: inherit;
-  color: var(--text);
-  background: #fff;
-}
-
-input:focus,
-textarea:focus {
-  outline: 2px solid rgba(13, 77, 141, 0.15);
-  border-color: rgba(13, 77, 141, 0.35);
-}
-
-.map-box {
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--line);
-}
-
-.map-box iframe {
-  width: 100%;
-  min-height: 420px;
-  border: 0;
-}
-
-@media (max-width: 860px) {
-  .main-nav {
-    display: none;
-  }
-  .three-grid,
-  .four-grid,
-  .two-col,
-  .split-section,
-  .contact-grid,
-  .footer-grid,
-  .two-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cta-box {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 540px) {
-  .nav-wrap {
-    flex-wrap: wrap;
-    padding: 0.75rem 0;
-  }
-
-  .brand {
-    width: 100%;
-  }
-
-  .hero {
-    min-height: 520px;
-  }
-
-  .field-row {
-    grid-template-columns: 1fr;
-  }
-
-  .btn {
-    width: 100%;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Find answers to common questions about admissions, academic pathways, and school life at JASS." />
+    <title>FAQ | JASS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="JASS home">
+          <span class="brand-mark">J</span>
+          <span>
+            <strong>JASS</strong>
+            <small>Secondary School</small>
+          </span>
+        </a>
+
+        <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="academics.html">Academics</a>
+          <a href="admissions.html">Admissions</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="news.html">News</a>
+          <a href="faq.html" class="active">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <a class="btn btn-primary desktop-only" href="admissions.html">Enroll Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero small-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+          <p class="eyebrow">Frequently Asked Questions</p>
+          <h1>Everything families usually ask about JASS.</h1>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container faq-wrap">
+          <div class="faq-item active">
+            <button class="faq-question" type="button">What academic pathways does the school offer?</button>
+            <div class="faq-answer">
+              <p>JASS offers a Science track and an Arts track, giving students a strong foundation for future study and personal growth.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">When is admissions open?</button>
+            <div class="faq-answer">
+              <p>Admissions are usually open during school registration periods. Families are encouraged to visit the school early to secure placement.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">What documents are needed for registration?</button>
+            <div class="faq-answer">
+              <p>Parents are typically asked to provide prior academic records, examination results, and identification details as required by the school.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Does the school focus on spiritual growth?</button>
+            <div class="faq-answer">
+              <p>Yes. Spiritual life is an important part of the school experience, including chapel devotions, pastoral care, Sabbath programs, and prayer activities.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Where is JASS located?</button>
+            <div class="faq-answer">
+              <p>Juba Seventh-day Adventist Secondary School is located at the Seventh-day Roundabout in Munuki, Juba, South Sudan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>JASS</h3>
+          <p>Helping families make informed decisions about their children’s future.</p>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Seventh-day Roundabout, Munuki</li>
+            <li>+211 923 580 078</li>
+            <li>+211 928 687 410</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 Juba Seventh-day Adventist Secondary School.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

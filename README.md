@@ -1,23 +1,304 @@
-# JASS
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".contact-form");
 
-Juba Seventh-day Adventist Secondary School website.
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const submitButton = form.querySelector("button[type='submit']");
+      const originalText = submitButton.textContent;
 
-This project is a static school website for JASS, built with HTML, CSS, and JavaScript for deployment on Cloudflare Pages or any static host.
+      submitButton.textContent = "Message Sent";
+      submitButton.disabled = true;
 
-## Pages
-- Home
-- About
-- Academics
-- Admissions
-- Contact
+      setTimeout(() => {
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        form.reset();
+      }, 2000);
+    });
+  }
 
-## Deployment
-Upload the project folder to Cloudflare Pages, or any static hosting service. No build step is required.
+  const toggle = document.querySelector(".mobile-toggle");
+  const nav = document.querySelector(".main-nav");
 
-## Contact information used in the site
-- Address: Seventh-day Roundabout, Munuki area, Juba, South Sudan
-- Phone: +211 923 580 078
-- Phone: +211 928 687 410
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
 
-## Notes
-The site content is designed using the information provided about JASS and can be updated with official school details, photos, and additional documents later.
+  const faqItems = document.querySelectorAll(".faq-item");
+  faqItems.forEach(function (item) {
+    const question = item.querySelector(".faq-question");
+    if (question) {
+      question.addEventListener("click", function () {
+        faqItems.forEach(function (faq) {
+          if (faq !== item) {
+            faq.classList.remove("active");
+          }
+        });
+        item.classList.toggle("active");
+      });
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
